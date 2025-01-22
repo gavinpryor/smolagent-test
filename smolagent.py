@@ -3,7 +3,7 @@ import subprocess
 import streamlit as st
 from smolagents import CodeAgent, DuckDuckGoSearchTool, HfApiModel
 
-model = HfApiModel(token=TOKEN)
+model = HfApiModel(token=${{ secrets.TOKEN }})
 
 agent = CodeAgent(tools=[DuckDuckGoSearchTool()], model=model, add_base_tools=True, additional_authorized_imports=["requests", "kbcstorage.client"])
 
